@@ -1,0 +1,11 @@
+resource "vault_identity_mfa_okta" "identity_mfa_okta" {
+  for_each = var.identity_mfa_okta
+
+  api_token       = each.value.api_token
+  org_name        = each.value.org_name
+  base_url        = each.value.base_url
+  namespace       = each.value.namespace
+  primary_email   = each.value.primary_email
+  username_format = each.value.username_format
+}
+
